@@ -1,17 +1,16 @@
 fun main(args: Array<String>) {
-    var listSize = readln().toInt()
-    var list = HashSet<Int>(readln().split(" ").map { it.toInt() })
+    var size = readln() //아래와 같이 구현하면 사용하지 않음
+    var hash = HashSet<Int>() // 중복을 제외한 HashSet<>()
 
-    var listSize2 = readln().toInt()
+    readln().split(" ").map { hash.add(it.toInt()) } // 확인을 위한 배열 작성
 
-    var list2 = readln().split(" ").map { it.toInt() }.toSet()
-    var index = if(list.size >= list2.size){list2-list}else{list-list2}
+    var size2 = readln() //아래와 같이 구현하면 사용하지 않음
 
-    list2.forEach{
-        if(index.contains(it)){
-            println(0)
-        }else{
+    readln().split(" ").map {// 확인이 필요한 배열을 받아 hash.contains()활용
+        if (hash.contains(it.toInt())){ // contains는 시간복잡도가 O(1)이다. ArrayList / Array는 탐색 시간이 O(n)이므로 Hash 사용
             println(1)
+        }else{
+            println(0)
         }
     }
 
