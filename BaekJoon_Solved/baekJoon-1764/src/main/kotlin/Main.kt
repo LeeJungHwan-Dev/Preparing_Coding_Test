@@ -24,4 +24,12 @@ fun main(args: Array<String>) {
 
     println(count)
     println(str)
+
+
+
+    when(size[0]){
+        1 -> {println("1")}
+
+    }
+
 }
